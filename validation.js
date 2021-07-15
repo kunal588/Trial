@@ -30,6 +30,11 @@ const searchForDomain = async (filename, domain) => {
 			.readFileSync(__dirname + filename, "utf-8")
 			.toString()
 			.split("\r\n");
+		let s = "";
+		for (let i = 0; i < domains[0].length; i++) {
+			s += domains[0].charCodeAt(i) + " ";
+		}
+		console.log(s);
 		for (let i = 0; i < domains.length; i++) {
 			if (domains[i].localeCompare(domain) === 0) return true;
 		}
@@ -44,6 +49,12 @@ const isMaildValid = async (mailId) => {
 	if (ind == -1) return false;
 	mailId = mailId.substring(ind);
 	console.log(mailId);
+	let s = "";
+	for (let i = 0; i < mailId.length; i++) {
+		s += mailId.charCodeAt(i) + " ";
+	}
+	console.log(s);
+
 	let found = await searchForDomain("/mail_data/IIT_Domains.txt", mailId);
 	if (found == true) return true;
 	found = await searchForDomain("/mail_data/IIIT Domain.txt", mailId);
