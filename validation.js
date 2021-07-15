@@ -29,7 +29,7 @@ const searchForDomain = async (filename, domain) => {
 		domains = fs
 			.readFileSync(__dirname + filename, "utf-8")
 			.toString()
-			.split("\r\n");
+			.split("\n");
 		let s = "";
 		for (let i = 0; i < domains[0].length; i++) {
 			s += domains[0].charCodeAt(i) + " ";
