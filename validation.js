@@ -34,7 +34,7 @@ const searchForDomain = async (filename, domain) => {
 		for (let i = 0; i < domains[0].length; i++) {
 			s += domains[0].charCodeAt(i) + " ";
 		}
-		console.log(s);
+		console.group(domains[0], s);
 		for (let i = 0; i < domains.length; i++) {
 			if (domains[i].localeCompare(domain) === 0) return true;
 		}
