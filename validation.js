@@ -30,6 +30,7 @@ const searchForDomain = async (filename, domain) => {
 			.readFileSync(__dirname + filename, "utf-8")
 			.toString()
 			.split("\r\n");
+		console.log(domains);
 		for (let i = 0; i < domains.length; i++) {
 			if (domains[i].localeCompare(domain) === 0) return true;
 		}
